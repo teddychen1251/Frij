@@ -2,6 +2,10 @@ import React from 'react';
 import { TextInput, Image, Text, View } from 'react-native';
 
 class RegisterScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Register'
+    };
+    
     render() {
         return (
           <View style={{flexDirection: 'column', justifyContent: 'center'}}>
