@@ -34,7 +34,7 @@ class NewFoodModal extends React.Component {
                 <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
                   <TextInput
                     id="ti1"
-                    style={{marginLeft : '40%', marginRight : '30%', height: 40}}
+                    style={{marginLeft : '38%', marginRight : '30%', height: 40}}
                     placeholder = "Food to add:"
                     onChangeText = {(ti1) => this.setState({ti1})}
                   />
@@ -47,7 +47,7 @@ class NewFoodModal extends React.Component {
                   <TextInput
                     id="ti3"
                     style={{marginLeft : '38%', marginRight : '30%', height: 40}}
-                    placeholder = "Price per unit:"
+                    placeholder = "$ Price per unit:"
                     onChangeText = {(ti3) => this.setState({ti3})}
                   />
                   <TextInput

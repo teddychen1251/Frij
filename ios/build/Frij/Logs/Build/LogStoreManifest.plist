@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>E7857CF2-CF93-4892-97E4-030C0F6D6F3D</key>
+		<key>607E7439-A479-45A4-B1A8-14B275972DA3</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>E7857CF2-CF93-4892-97E4-030C0F6D6F3D.xcactivitylog</string>
+			<string>607E7439-A479-45A4-B1A8-14B275972DA3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,13 @@
 			<key>signature</key>
 			<string>Building workspace Frij with scheme Frij and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>593774066.48392904</real>
+			<real>593794157.24122202</real>
 			<key>timeStoppedRecording</key>
-			<real>593774067.67908096</real>
+			<real>593794164.01777601</real>
 			<key>title</key>
 			<string>Building workspace Frij with scheme Frij and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>E7857CF2-CF93-4892-97E4-030C0F6D6F3D</string>
+			<string>607E7439-A479-45A4-B1A8-14B275972DA3</string>
 		</dict>
 	</dict>
 </dict>
