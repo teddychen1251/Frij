@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, TextInput, Image, Text, View } from 'react-native';
 
 import Axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const styles = StyleSheet.create({
   ButtonStyle: {
@@ -124,7 +125,8 @@ class RegisterScreen extends React.Component {
                 organization: this.state.organization
             })
             .then(response => {
-                console.log(response.data.token)
+                AsyncStorage.setItem('@User_token', response.data.token)
+                .then(response => console.log(response));
                 this.props.navigation.navigate('Login');
             })
             .catch(error => console.log(error.response));
