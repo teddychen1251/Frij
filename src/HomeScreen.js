@@ -18,11 +18,11 @@ class HomeScreen extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
         return (
-            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{justifyContent: 'center'}}>
               <View style = {{padding: 70, alignItems: 'center'}}>
                 <Image source = {require('./assets/frijlogo.png')}/>
               </View>
-              <View style = {{paddingVeritcal: 10, justifyContent: 'center'}}>
+              <View style = {{marginHorizontal : '30%', justifyContent: 'center'}}>
                 <TouchableOpacity
                   style = {styles.ButtonStyle}
                   activeOpacity = { .5 }
@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
                   <Text style = {styles.TextStyle}> Register </Text>
                 </TouchableOpacity>
               </View>
-              <View style = {{paddingVertical: 10, justifyContent: 'center'}}>
+              <View style = {{marginHorizontal : '30%', paddingVertical: 10, justifyContent: 'center'}}>
                 <TouchableOpacity
                   style = {styles.ButtonStyle}
                   activeOpacity = { .5 }

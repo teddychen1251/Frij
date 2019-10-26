@@ -1,7 +1,18 @@
 import React from 'react';
-import { Image, TextInput, Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Image, TextInput, Text, View } from 'react-native';
 
-
+const styles = StyleSheet.create({
+  ButtonStyle: {
+    padding : 10,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#000'
+  },
+  TextStyle: {
+    color: '#000',
+    textAlign: 'center'
+  }
+});
 
 class LoginScreen extends React.Component {
     render() {
@@ -18,6 +29,17 @@ class LoginScreen extends React.Component {
                 style={{marginLeft : '33%', marginRight : '33%', height: 40}}
                 placeholder = "Enter your password!"
               />
+              <View style = {{marginHorizontal : '30%', paddingVertical: 10, justifyContent: 'center'}}>
+                <TouchableOpacity
+                  style = {styles.ButtonStyle}
+                  activeOpacity = { .5 }
+                  onPress={() => {
+                          navigate('Login')
+                      }}
+                >
+                  <Text style = {styles.TextStyle}> Login </Text>
+                </TouchableOpacity>
+              </View>
             </View>
         );
     }
