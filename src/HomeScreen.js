@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
 });
 
 class HomeScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Frij'
+    };
+
     render() {
         const {navigate} = this.props.navigation;
         return (

@@ -15,7 +15,12 @@ const styles = StyleSheet.create({
 });
 
 class LoginScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Login'
+    };
+
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <View style={{justifyContent: 'center'}}>
               <View style = {{justifyContent: 'center', alignItems: 'center'}}>
@@ -29,6 +34,7 @@ class LoginScreen extends React.Component {
                 style={{marginLeft : '33%', marginRight : '33%', height: 40}}
                 placeholder = "Enter your password!"
               />
+<<<<<<< HEAD
               <View style = {{marginHorizontal : '30%', paddingVertical: 10, justifyContent: 'center'}}>
                 <TouchableOpacity
                   style = {styles.ButtonStyle}
@@ -40,6 +46,16 @@ class LoginScreen extends React.Component {
                   <Text style = {styles.TextStyle}> Login </Text>
                 </TouchableOpacity>
               </View>
+=======
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Text>login</Text>
+                <Button
+                    title='Login'
+                    onPress={() => {
+                        navigate('Frij');
+                    }}
+                />
+>>>>>>> e5a9a0866f2f4228f396aa540c9699b0377b1ce5
             </View>
         );
     }

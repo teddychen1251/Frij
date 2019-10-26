@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
 });
 
 class RegisterScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Register'
+    };
+    
     render() {
         return (
           <View style={{flexDirection: 'column', justifyContent: 'center'}}>
