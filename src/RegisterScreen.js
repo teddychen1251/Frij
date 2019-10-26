@@ -21,6 +21,7 @@ class RegisterScreen extends React.Component {
         title: 'Register'
     };
     state = {
+        name: '',
         organization: '',
         email: '',
         password: '',
@@ -34,8 +35,11 @@ class RegisterScreen extends React.Component {
             </View>
             <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
               <TextInput
-                style={{marginLeft : '40%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Organization:"
+                autoCompleteType = 'off'
+                autoCapitalize = 'none'
+                autoCorrect = 'false'
                 onChangeText={(organization) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -44,8 +48,24 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '39%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                placeholder = "Name:"
+                autoCompleteType = 'off'
+                autoCapitalize = 'none'
+                autoCorrect = 'false'
+                onChangeText={(name) => this.setState(previousState => {
+                    return {
+                        ...previousState,
+                        name
+                    }
+                })}
+            />
+              <TextInput
+                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Email account:"
+                autoCompleteType = 'off'
+                autoCapitalize = 'none'
+                autoCorrect = 'false'
                 onChangeText={(email) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -54,8 +74,12 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '37%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Create password:"
+                secureTextEntry = 'true'
+                autoCompleteType = 'off'
+                autoCapitalize = 'none'
+                autoCorrect = 'false'
                 onChangeText={(password) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -64,8 +88,12 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '38%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Verify password:"
+                secureTextEntry = 'true'
+                autoCompleteType = 'off'
+                autoCapitalize = 'none'
+                autoCorrect = 'false'
                 onChangeText={(verifyPassword) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -90,7 +118,7 @@ class RegisterScreen extends React.Component {
     handleRegister() {
         if (this.state.password === this.state.verifyPassword) {
             Axios.post('http://localhost:5000/api/users', {
-                name: 'test',
+                name: this.state.name,
                 email: this.state.email,
                 password: this.state.password,
                 organization: this.state.organization
