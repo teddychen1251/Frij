@@ -21,7 +21,7 @@ class NewFoodModal extends React.Component {
     this.state = {ti1: "",
                   ti2: "",
                   ti3: "",
-                  ti4: new Date()
+                  ti4: new Date().toISOString().substring(0, 10)
                   };
   }
 
@@ -64,10 +64,8 @@ class NewFoodModal extends React.Component {
                     value={new Date()}
                     minimumDate={new Date()}
                     display='default'
-                    onChange={
-                        this.setDate
-                    }
-                    onChangeText={(ti4) => this.setState({ti4})}
+                    onChange={this.setDate}
+                    onChangeText={(ti4) => this.setState({ti4: ti4.toISOString().substring(0, 10)})}
                 />
                   <View style = {{paddingVertical : 10, marginHorizontal : '30%', justifyContent: 'center'}}>
                     <TouchableOpacity
