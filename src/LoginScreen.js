@@ -1,6 +1,7 @@
 import React from 'react';
 import { KeyboardAvoidingView, StyleSheet, TouchableOpacity, Image, TextInput, Text, View } from 'react-native';
 import Axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const styles = StyleSheet.create({
   ButtonStyle: {
@@ -81,7 +82,7 @@ class LoginScreen extends React.Component {
           password: this.state.password
       })
       .then(response => {
-          console.log(response.data.token)
+          AsyncStorage.setItem('@User_token', response.data.token);
           this.props.navigation.navigate('Frij');
       })
       .catch(error => console.log(error.response));

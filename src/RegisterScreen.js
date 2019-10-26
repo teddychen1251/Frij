@@ -126,7 +126,6 @@ class RegisterScreen extends React.Component {
             })
             .then(response => {
                 AsyncStorage.setItem('@User_token', response.data.token)
-                .then(response => console.log(response));
                 this.props.navigation.navigate('Login');
             })
             .catch(error => console.log(error.response));
