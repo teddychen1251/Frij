@@ -40,7 +40,7 @@ class RegisterScreen extends React.Component {
                 placeholder = "Organization:"
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
                 onChangeText={(organization) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -53,7 +53,7 @@ class RegisterScreen extends React.Component {
                 placeholder = "Name:"
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
                 onChangeText={(name) => this.setState(previousState => {
                     return {
                         ...previousState,
@@ -66,7 +66,7 @@ class RegisterScreen extends React.Component {
                 placeholder = "Email account:"
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
                 onChangeText={(email) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -77,10 +77,10 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Create password:"
-                secureTextEntry = 'true'
+                secureTextEntry = {true}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
                 onChangeText={(password) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -91,10 +91,10 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Verify password:"
-                secureTextEntry = 'true'
+                secureTextEntry = {true}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
                 onChangeText={(verifyPassword) => this.setState(previousState => {
                     return {
                         ...previousState, 

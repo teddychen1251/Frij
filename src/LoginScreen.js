@@ -42,7 +42,7 @@ class LoginScreen extends React.Component {
                 })}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
               />
               <TextInput
                 style={{marginLeft : '33%', marginRight : '29%', height: 40}}
@@ -53,10 +53,10 @@ class LoginScreen extends React.Component {
                         password
                     }
                 })}
-                secureTextEntry = 'true'
+                secureTextEntry = {true}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCorrect = {false}
               />
               <View style = {{marginHorizontal : '30%', paddingVertical: 20, justifyContent: 'center'}}>
                 <TouchableOpacity
