@@ -5,6 +5,41 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>E7857CF2-CF93-4892-97E4-030C0F6D6F3D</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E7857CF2-CF93-4892-97E4-030C0F6D6F3D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Frij project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Frij</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace Frij with scheme Frij and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>593774066.48392904</real>
+			<key>timeStoppedRecording</key>
+			<real>593774067.67908096</real>
+			<key>title</key>
+			<string>Building workspace Frij with scheme Frij and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>E7857CF2-CF93-4892-97E4-030C0F6D6F3D</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
