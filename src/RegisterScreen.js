@@ -18,8 +18,9 @@ class RegisterScreen extends React.Component {
     static navigationOptions = {
         title: 'Register'
     };
-    
+
     render() {
+        const {navigate} = this.props.navigation;
         return (
           <View style={{flexDirection: 'column', justifyContent: 'center'}}>
             <View style = {{justifyContent: 'center', alignItems: 'center'}}>
@@ -27,15 +28,15 @@ class RegisterScreen extends React.Component {
             </View>
             <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
               <TextInput
-                style={{marginLeft : '38%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '40%', marginRight : '33%', height: 40}}
                 placeholder = "Organization:"
               />
               <TextInput
-                style={{marginLeft : '38%', marginRight : '33%', height: 40}}
-                placeholder = "Create username:"
+                style={{marginLeft : '39%', marginRight : '33%', height: 40}}
+                placeholder = "Email account:"
               />
               <TextInput
-                style={{marginLeft : '38%', marginRight : '33%', height: 40}}
+                style={{marginLeft : '37%', marginRight : '33%', height: 40}}
                 placeholder = "Create password:"
               />
               <TextInput

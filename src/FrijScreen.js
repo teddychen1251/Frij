@@ -1,7 +1,11 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { ScrollView, Text, View, Button } from 'react-native';
 
 class FrijScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
     static navigationOptions = ({ navigation }) => {
         return {
             title: 'Your Frij',
@@ -17,8 +21,17 @@ class FrijScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <Text>foods</Text>
+            <View style = {{flexDirection: 'column', flex:1}}>
+              <View style = {{flex: 1, flexDirection: 'row', justifyContent: 'center', paddingVertical : 10}}>
+                <Text style={{marginLeft : '33%', marginRight : '33%'}}>Organization</Text>
+              </View>
+              <View style = {{flexDirection: 'column', flex : 1}}>
+                  <ScrollView>
+                    <View style = {{flexDirection: 'row', flex: 1, flexWrap: 'wrap'}}>
+                    </View>
+                  </ScrollView>
+
+              </View>
             </View>
         )
     }
