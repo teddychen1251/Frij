@@ -128,7 +128,7 @@ class RegisterScreen extends React.Component {
                 AsyncStorage.setItem('@User_token', response.data.token)
                 this.props.navigation.navigate('Login');
             })
-            .catch(error => console.log(error.response));
+            .catch(error => alert(error.response.data.errors[0].msg));
 
         } else {
             alert('Passwords do not match');

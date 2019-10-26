@@ -1,5 +1,6 @@
 import React from 'react';
 import { KeyboardAvoidingView, TextInput, StyleSheet, TouchableOpacity, Text, View, Button } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const styles = StyleSheet.create({
   ButtonStyle: {
@@ -20,7 +21,7 @@ class NewFoodModal extends React.Component {
     this.state = {ti1: "",
                   ti2: "",
                   ti3: "",
-                  ti4: ""
+                  ti4: new Date()
                   };
   }
 
@@ -35,27 +36,39 @@ class NewFoodModal extends React.Component {
                   <TextInput
                     id="ti1"
                     style={{marginLeft : '38%', marginRight : '30%', height: 40}}
-                    placeholder = "Food to add:"
+                    placeholder = "Food to add"
                     onChangeText = {(ti1) => this.setState({ti1})}
                   />
                   <TextInput
                     id="ti2"
                     style={{marginLeft : '38%', marginRight : '30%', height: 40}}
-                    placeholder = "Amount to add:"
+                    placeholder = "Amount to add"
                     onChangeText = {(ti2) => this.setState({ti2})}
                   />
                   <TextInput
                     id="ti3"
                     style={{marginLeft : '38%', marginRight : '30%', height: 40}}
-                    placeholder = "$ Price per unit:"
+                    placeholder = "$ Price per unit"
                     onChangeText = {(ti3) => this.setState({ti3})}
                   />
-                  <TextInput
-                    id="ti4"
-                    style={{marginLeft : '38%', marginRight : '30%', height: 40}}
-                    placeholder = "Expiration Date:"
-                    onChangeText = {(ti4) => this.setState({ti4})}
-                  />
+                  <Text style={{
+                      marginLeft : '38%', 
+                      marginRight : '30%', 
+                      marginTop: 10, 
+                      marginBottom : 0, 
+                      color : '#ccc', 
+                      height : 40}}>
+                        Expiration Date:
+                    </Text>
+                  <DateTimePicker 
+                    value={new Date()}
+                    minimumDate={new Date()}
+                    display='default'
+                    onChange={
+                        this.setDate
+                    }
+                    onChangeText={(ti4) => this.setState({ti4})}
+                />
                   <View style = {{paddingVertical : 10, marginHorizontal : '30%', justifyContent: 'center'}}>
                     <TouchableOpacity
                       style = {styles.ButtonStyle}
