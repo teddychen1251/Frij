@@ -43,7 +43,7 @@ class NewFoodModal extends React.Component {
                 <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
                   <TextInput
                     id="name"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "Food to add"
                     autoCompleteType = 'off'
@@ -53,7 +53,7 @@ class NewFoodModal extends React.Component {
                   />
                   <TextInput
                     id="amount"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "Amount to add"
                     autoCompleteType = 'off'
@@ -63,7 +63,7 @@ class NewFoodModal extends React.Component {
                   />
                   <TextInput
                     id="price"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "$ Price per unit"
                     autoCompleteType = 'off'
@@ -119,7 +119,7 @@ class NewFoodModal extends React.Component {
 
     handleAddItems() {
       AsyncStorage.getItem('@User_token').then(response => {
-        Axios.post('http://localhost:5000/api/storage/bulk/' + this.state.amount, {
+        Axios.post('https://frij-api.herokuapp.com/api/storage/bulk/' + this.state.amount, {
           name: this.state.name,
           expDate: this.state.expDate,
           price: this.state.price

@@ -85,7 +85,7 @@ class LoginScreen extends React.Component {
         );
     }
     handleLogin() {
-      Axios.post('http://localhost:5000/api/auth', {
+      Axios.post('https://frij-api.herokuapp.com/api/auth', {
           email: this.state.email,
           password: this.state.password
       })

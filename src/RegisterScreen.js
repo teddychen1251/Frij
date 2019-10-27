@@ -129,7 +129,7 @@ class RegisterScreen extends React.Component {
 
     handleRegister() {
         if (this.state.password === this.state.verifyPassword) {
-            Axios.post('http://localhost:5000/api/users', {
+            Axios.post('https://frij-api.herokuapp.com/api/users', {
                 name: this.state.name,
                 email: this.state.email,
                 password: this.state.password,
@@ -139,7 +139,10 @@ class RegisterScreen extends React.Component {
                 AsyncStorage.setItem('@User_token', response.data.token)
                 this.props.navigation.navigate('Login');
             })
-            .catch(error => alert(error.response ? error.response.data.errors[0].msg : 'error occurred')); 
+            .catch(error => {
+              console.log(error);
+              alert(error.response ? error.response.data.errors[0].msg : 'error occurred')
+            }); 
         } else {
             alert('Passwords do not match');
         }
