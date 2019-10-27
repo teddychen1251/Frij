@@ -7,6 +7,9 @@ import RegisterScreen from './src/RegisterScreen';
 import LoginScreen from './src/LoginScreen';
 import FrijScreen from './src/FrijScreen';
 import NewFoodModal from './src/NewFoodModal';
+import EditFoodModal from './src/EditFoodModal';
+import FoodWaste from './src/FoodWaste';
+import RemoveMultiple from './src/RemoveMultiple';
 
 const MainStack = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -33,8 +36,14 @@ const RootStack = createStackNavigator({
   FoodModal: {
     screen: NewFoodModal
   },
-  FrijScreen: {
-    screen: FrijScreen
+  EditFoodModal: {
+    screen: EditFoodModal
+  },
+  FoodWaste: {
+    screen: FoodWaste
+  },
+  RemoveMultiple: {
+    screen: RemoveMultiple
   }
 },
 {
