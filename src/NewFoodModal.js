@@ -119,7 +119,7 @@ class NewFoodModal extends React.Component {
 
     handleAddItems() {
       AsyncStorage.getItem('@User_token').then(response => {
-        Axios.post('http://localhost:5000/api/storage/bulk/' + this.state.amount, {
+        Axios.post('https://frij-api.herokuapp.com/api/storage/bulk/' + this.state.amount, {
           name: this.state.name,
           expDate: this.state.expDate,
           price: this.state.price

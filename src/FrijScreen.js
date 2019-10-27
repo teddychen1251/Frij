@@ -4,6 +4,8 @@ import { Image, ScrollView, Text, View, Button } from 'react-native';
 import Axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 
+import Notifier from '../Notifier';
+
 class FrijScreen extends React.Component {
     constructor(props) {
       super(props);
@@ -31,20 +33,20 @@ class FrijScreen extends React.Component {
             )
         };
     };
-    componentDidMount() {
+
+    componentDidMount = () => {
         AsyncStorage.getItem('@User_token').then(token => {
-            Axios.get('http://localhost:5000/api/users', {
+            Axios.get('https://frij-api.herokuapp.com/api/users', {
                 headers: {
                     'x-auth-token': token
                 }
             })
-            .then(response => this.setState({organization: response.data.organization}))
+            .then(response => {
+                this.setState({organization: response.data.organization});
+            })
             .catch(error => console.log(error.response));
         })
-    }
-
-    componentDidMount = () => {
-      this.handleDisplayItems();
+        this.handleDisplayItems();
     }
 
     render() {
@@ -175,14 +177,30 @@ class FrijScreen extends React.Component {
       }
     }
 
+    _expireWithinTwoDays(expDate) {
+        let inTwoDays = new Date().setDate(new Date().getDate() + 2);
+        return inTwoDays >= (1.0 * expDate)
+    }
+
     handleDisplayItems = () => {
       AsyncStorage.getItem('@User_token').then(response => {
-        Axios.get('http://localhost:5000/api/storage/', {
+        Axios.get('https://frij-api.herokuapp.com/api/storage/', {
           headers : {
             'x-auth-token' : response
           }
         })
         .then(arr => {
+            let aboutToExpire = false;
+            for (item of arr.data.inventory) {
+              console.log(item);
+                if (this._expireWithinTwoDays(new Date(item.expDate))) {
+                    aboutToExpire = true;
+                    break;
+                }
+            }
+            if (aboutToExpire) {
+                Notifier.expirNotifAtDate(Date.now() + 60 * 1000); // in 1 minutes
+            }
             this.setState({inventory: arr.data.inventory})
         })
         .catch(error => {

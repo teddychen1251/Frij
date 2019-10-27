@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const styles = StyleSheet.create({
   ButtonStyle: {
@@ -19,6 +20,11 @@ class HomeScreen extends React.Component {
         title: 'Frij'
     };
 
+    componentDidMount() {
+      AsyncStorage.getItem('@User_token')
+      .then(() => this.props.navigation.navigate('Frij'));
+    }
+
     render() {
         const {navigate} = this.props.navigation;
         return (
@@ -31,7 +37,7 @@ class HomeScreen extends React.Component {
                   style = {styles.ButtonStyle}
                   activeOpacity = { .5 }
                   onPress={() => {
-                        navigate('Register')
+                        navigate('Register');
                       }}
                 >
                   <Text style = {styles.TextStyle}> Register </Text>
