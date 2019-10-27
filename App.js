@@ -32,6 +32,9 @@ const RootStack = createStackNavigator({
   },
   FoodModal: {
     screen: NewFoodModal
+  },
+  FrijScreen: {
+    screen: FrijScreen
   }
 },
 {

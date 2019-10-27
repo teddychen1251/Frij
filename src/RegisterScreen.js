@@ -50,7 +50,7 @@ class RegisterScreen extends React.Component {
                 autoCorrect = {false}
                 onChangeText={(organization) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         organization
                     }
                 })}
@@ -78,7 +78,7 @@ class RegisterScreen extends React.Component {
                 autoCorrect = {false}
                 onChangeText={(email) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         email
                     }
                 })}
@@ -93,7 +93,7 @@ class RegisterScreen extends React.Component {
                 autoCorrect = {false}
                 onChangeText={(password) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         password
                     }
                 })}
@@ -108,7 +108,7 @@ class RegisterScreen extends React.Component {
                 autoCorrect = {false}
                 onChangeText={(verifyPassword) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         verifyPassword
                     }
                 })}

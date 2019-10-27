@@ -43,7 +43,7 @@ class LoginScreen extends React.Component {
                 placeholderTextColor='#888'
                 onChangeText={(email) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         email
                     }
                 })}
@@ -57,7 +57,7 @@ class LoginScreen extends React.Component {
                 placeholderTextColor='#888'
                 onChangeText={(password) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         password
                     }
                 })}
@@ -96,8 +96,6 @@ class LoginScreen extends React.Component {
       .catch(error => alert(error.response ? error.response.data.errors[0].msg : 'error occurred'));
   }
 }
-
-
 
 
 export default LoginScreen;

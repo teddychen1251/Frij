@@ -59,11 +59,14 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< HEAD:ios/Pods/Pods.xcodeproj/xcuserdata/teddychen.xcuserdatad/xcschemes/xcschememanagement.plist
 		<key>RNCPushNotificationIOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+=======
+>>>>>>> tempbranch:ios/Pods/Pods.xcodeproj/xcuserdata/justinjhu.xcuserdatad/xcschemes/xcschememanagement.plist
 		<key>RNDateTimePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
