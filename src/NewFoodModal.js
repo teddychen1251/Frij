@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
   TextStyle: {
     color: '#000',
     textAlign: 'center'
+  },
+  TextInputStyle: {
+    marginLeft : '33%', 
+    marginRight : '29%', 
+    height: 40,
+    color: '#444'
   }
 });
 
@@ -35,20 +41,23 @@ class NewFoodModal extends React.Component {
                 <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
                   <TextInput
                     id="ti1"
-                    style={{marginLeft : '38%', marginRight : '30%', height: 40}}
+                    style={style.TextInputStyle}
                     placeholder = "Food to add"
+                    placeholderTextColor='#888'
                     onChangeText = {(ti1) => this.setState({ti1})}
                   />
                   <TextInput
                     id="ti2"
-                    style={{marginLeft : '38%', marginRight : '30%', height: 40}}
+                    style={style.TextInputStyle}
                     placeholder = "Amount to add"
+                    placeholderTextColor='#888'
                     onChangeText = {(ti2) => this.setState({ti2})}
                   />
                   <TextInput
                     id="ti3"
-                    style={{marginLeft : '38%', marginRight : '30%', height: 40}}
+                    style={style.TextInputStyle}
                     placeholder = "$ Price per unit"
+                    placeholderTextColor='#888'
                     onChangeText = {(ti3) => this.setState({ti3})}
                   />
                   <Text style={{
@@ -56,7 +65,7 @@ class NewFoodModal extends React.Component {
                       marginRight : '30%', 
                       marginTop: 10, 
                       marginBottom : 0, 
-                      color : '#ccc', 
+                      color : '#888', 
                       height : 40}}>
                         Expiration Date:
                     </Text>

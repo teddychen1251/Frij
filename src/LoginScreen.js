@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
   TextStyle: {
     color: '#000',
     textAlign: 'center'
+  },
+  TextInputStyle: {
+    marginLeft : '33%', 
+    marginRight : '29%', 
+    height: 40,
+    color: '#444'
   }
 });
 
@@ -32,8 +38,9 @@ class LoginScreen extends React.Component {
                 <Image source = {require('./assets/frijlogo.png')} style={{width: '50%', height: '50%'}} resizeMode = "contain"/>
               </View>
               <TextInput
-                style={{marginLeft : '33%', marginRight : '29%', height: 40, justifyContent: 'center'}}
+                style={{...styles.TextInputStyle, justifyContent: 'center'}}
                 placeholder = "Enter your email!"
+                placeholderTextColor='#888'
                 onChangeText={(email) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -45,8 +52,9 @@ class LoginScreen extends React.Component {
                 autoCorrect = {false}
               />
               <TextInput
-                style={{marginLeft : '33%', marginRight : '29%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Enter your password!"
+                placeholderTextColor='#888'
                 onChangeText={(password) => this.setState(previousState => {
                     return {
                         ...previousState, 
@@ -85,9 +93,7 @@ class LoginScreen extends React.Component {
           AsyncStorage.setItem('@User_token', response.data.token);
           this.props.navigation.navigate('Frij');
       })
-      .catch(error => {
-        alert(error.response.data.errors[0].msg);
-      });
+      .catch(error => alert(error.response ? error.response.data.errors[0].msg : 'error occurred'));
   }
 }
 

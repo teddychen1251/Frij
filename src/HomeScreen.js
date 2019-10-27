@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
+import Notifier from '../Notifier';
+
 const styles = StyleSheet.create({
   ButtonStyle: {
     padding : 10,
@@ -31,7 +33,8 @@ class HomeScreen extends React.Component {
                   style = {styles.ButtonStyle}
                   activeOpacity = { .5 }
                   onPress={() => {
-                          navigate('Register')
+                        new Notifier().localNotif("Hi", "I like pie")
+                        navigate('Register')
                       }}
                 >
                   <Text style = {styles.TextStyle}> Register </Text>

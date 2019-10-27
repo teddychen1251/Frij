@@ -20,11 +20,10 @@ const MainStack = createStackNavigator({
     headerStyle: {
       backgroundColor: '#fffff'
     },
-    headerTintColor: '#ccccc8',
+    headerTintColor: '#aaa',
     headerTitleStyle: {
         fontWeight: 'bold'
-    },
-    // headerShown: false
+    }
   }
 });
 const RootStack = createStackNavigator({

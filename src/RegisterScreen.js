@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
   TextStyle: {
     color: '#000',
     textAlign: 'center'
+  },
+  TextInputStyle: {
+    marginLeft : '37%', 
+    marginRight : '25%', 
+    height: 40,
+    color: '#444'
   }
 });
 
@@ -36,8 +42,9 @@ class RegisterScreen extends React.Component {
             </View>
             <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
               <TextInput
-                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Organization:"
+                placeholderTextColor='#888'
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
                 autoCorrect = {false}
@@ -49,8 +56,9 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Name:"
+                placeholderTextColor='#888'
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
                 autoCorrect = {false}
@@ -62,8 +70,9 @@ class RegisterScreen extends React.Component {
                 })}
             />
               <TextInput
-                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Email account:"
+                placeholderTextColor='#888'
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
                 autoCorrect = {false}
@@ -75,8 +84,9 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Create password:"
+                placeholderTextColor='#888'
                 secureTextEntry = {true}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
@@ -89,8 +99,9 @@ class RegisterScreen extends React.Component {
                 })}
               />
               <TextInput
-                style={{marginLeft : '37%', marginRight : '25%', height: 40}}
+                style={styles.TextInputStyle}
                 placeholder = "Verify password:"
+                placeholderTextColor='#888'
                 secureTextEntry = {true}
                 autoCompleteType = 'off'
                 autoCapitalize = 'none'
@@ -128,8 +139,7 @@ class RegisterScreen extends React.Component {
                 AsyncStorage.setItem('@User_token', response.data.token)
                 this.props.navigation.navigate('Login');
             })
-            .catch(error => alert(error.response.data.errors[0].msg));
-
+            .catch(error => alert(error.response ? error.response.data.errors[0].msg : 'error occurred')); 
         } else {
             alert('Passwords do not match');
         }
