@@ -3,7 +3,6 @@ import { Image, ScrollView, Text, View, Button } from 'react-native';
 
 import Axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
-import Axios from 'axios';
 
 class FrijScreen extends React.Component {
     constructor(props) {
