@@ -38,12 +38,12 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Organization:"
-                autoCompleteType = 'off'
-                autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCompleteType = "off"
+                autoCapitalize = "none"
+                autoCorrect = "false"
                 onChangeText={(organization) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         organization
                     }
                 })}
@@ -51,9 +51,9 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Name:"
-                autoCompleteType = 'off'
-                autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCompleteType = "off"
+                autoCapitalize = "none"
+                autoCorrect = "false"
                 onChangeText={(name) => this.setState(previousState => {
                     return {
                         ...previousState,
@@ -64,12 +64,12 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Email account:"
-                autoCompleteType = 'off'
-                autoCapitalize = 'none'
-                autoCorrect = 'false'
+                autoCompleteType = "off"
+                autoCapitalize = "none"
+                autoCorrect = "false"
                 onChangeText={(email) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         email
                     }
                 })}
@@ -77,13 +77,13 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Create password:"
-                secureTextEntry = 'true'
-                autoCompleteType = 'off'
-                autoCapitalize = 'none'
-                autoCorrect = 'false'
+                secureTextEntry = "true"
+                autoCompleteType = "off"
+                autoCapitalize = "none"
+                autoCorrect = "false"
                 onChangeText={(password) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         password
                     }
                 })}
@@ -91,13 +91,13 @@ class RegisterScreen extends React.Component {
               <TextInput
                 style={{marginLeft : '37%', marginRight : '25%', height: 40}}
                 placeholder = "Verify password:"
-                secureTextEntry = 'true'
-                autoCompleteType = 'off'
-                autoCapitalize = 'none'
-                autoCorrect = 'false'
+                secureTextEntry = "true"
+                autoCompleteType = "off"
+                autoCapitalize = "none"
+                autoCorrect = "false"
                 onChangeText={(verifyPassword) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         verifyPassword
                     }
                 })}

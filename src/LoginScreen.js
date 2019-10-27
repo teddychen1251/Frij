@@ -36,7 +36,7 @@ class LoginScreen extends React.Component {
                 placeholder = "Enter your email!"
                 onChangeText={(email) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         email
                     }
                 })}
@@ -49,7 +49,7 @@ class LoginScreen extends React.Component {
                 placeholder = "Enter your password!"
                 onChangeText={(password) => this.setState(previousState => {
                     return {
-                        ...previousState, 
+                        ...previousState,
                         password
                     }
                 })}
@@ -90,8 +90,6 @@ class LoginScreen extends React.Component {
       });
   }
 }
-
-
 
 
 export default LoginScreen;
