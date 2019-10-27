@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   TextInputStyle: {
-    marginLeft : '33%', 
-    marginRight : '29%', 
+    marginLeft : '33%',
+    marginRight : '29%',
     height: 40,
     color: '#444'
   }
@@ -43,7 +43,7 @@ class NewFoodModal extends React.Component {
                 <View style = {{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
                   <TextInput
                     id="name"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "Food to add"
                     autoCompleteType = 'off'
@@ -53,7 +53,7 @@ class NewFoodModal extends React.Component {
                   />
                   <TextInput
                     id="amount"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "Amount to add"
                     autoCompleteType = 'off'
@@ -63,7 +63,7 @@ class NewFoodModal extends React.Component {
                   />
                   <TextInput
                     id="price"
-                    style={style.TextInputStyle}
+                    style={styles.TextInputStyle}
                     placeholderTextColor='#888'
                     placeholder = "$ Price per unit"
                     autoCompleteType = 'off'

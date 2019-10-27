@@ -50,6 +50,14 @@ class FrijScreen extends React.Component {
     render() {
       if (typeof this.state.inventory !== 'undefined') {
         return (
+            <View style = {{flexDirection : 'column'}}>
+            <View style = {{paddingVertical : 10}}>
+              <Button
+                title="What's my food waste today?"
+                onPress = {() => this.props.navigation.navigate('FoodWaste')}
+              />
+            </View>
+            <View style = {{width: undefined, height : '80%'}}>
             <ScrollView>
             {
               this.state.inventory.map(entry => {
@@ -65,7 +73,12 @@ class FrijScreen extends React.Component {
                                 <Text style={{fontSize: 16}}>{"Price: $" + entry.price}</Text>
                               </View>
                               <View style={{marginLeft: 10, paddingVertical: 15}}>
-                                <Button title="Edit"></Button>
+                                <Button
+                                  title="Edit"
+                                  onPress={() => {this.props.navigation.navigate('EditFoodModal', {
+                                    id : entry._id
+                                  });}}
+                                />
                               </View>
                             </View>
                     case "banana":
@@ -79,7 +92,12 @@ class FrijScreen extends React.Component {
                                 <Text style={{fontSize: 16}}>{"Price: $" + entry.price}</Text>
                               </View>
                               <View style={{marginLeft: 10, paddingVertical: 15}}>
-                                <Button title="Edit"></Button>
+                                <Button
+                                  title="Edit"
+                                  onPress={() => {this.props.navigation.navigate('EditFoodModal', {
+                                    id : entry._id
+                                  });}}
+                                />
                               </View>
                             </View>
                     case "egg":
@@ -93,7 +111,12 @@ class FrijScreen extends React.Component {
                                 <Text style={{fontSize: 16}}>{"Price: $" + entry.price}</Text>
                               </View>
                               <View style={{marginLeft: 10, paddingVertical: 15}}>
-                                <Button title="Edit"></Button>
+                                <Button
+                                  title="Edit"
+                                  onPress={() => {this.props.navigation.navigate('EditFoodModal', {
+                                    id : entry._id
+                                  });}}
+                                />
                               </View>
                             </View>
                     case "ham":
@@ -107,7 +130,12 @@ class FrijScreen extends React.Component {
                                 <Text style={{fontSize: 16}}>{"Price: $" + entry.price}</Text>
                               </View>
                               <View style={{marginLeft: 10, paddingVertical: 15}}>
-                                <Button title="Edit"></Button>
+                                <Button
+                                  title="Edit"
+                                  onPress={() => {this.props.navigation.navigate('EditFoodModal', {
+                                    id : entry._id
+                                  });}}
+                                />
                               </View>
                             </View>
                     default:
@@ -121,13 +149,26 @@ class FrijScreen extends React.Component {
                                 <Text style={{fontSize: 16}}>{"Price: $" + entry.price}</Text>
                               </View>
                               <View style={{marginLeft: 10, paddingVertical: 15}}>
-                                <Button title="Edit"></Button>
+                                <Button
+                                  title="Edit"
+                                  onPress={() => {this.props.navigation.navigate('EditFoodModal', {
+                                    id : entry._id
+                                  });}}
+                                />
                               </View>
                             </View>
                   }
                 })
             }
             </ScrollView>
+            </View>
+            <View style = {{paddingVertical : 5}}>
+              <Button
+                title="Remove multiple"
+                onPress = {() => this.props.navigation.navigate('RemoveMultiple')}
+              />
+            </View>
+            </View>
         )
       } else {
         return null;
