@@ -51,6 +51,17 @@ class FrijScreen extends React.Component {
 
     render() {
       if (typeof this.state.inventory !== 'undefined') {
+        let aboutToExpire = false;
+        for (let item of this.state.inventory) {
+            if (this._expireWithinTwoDays(new Date(item.expDate))) {
+                aboutToExpire = true;
+                break;
+            }
+        }
+        if (aboutToExpire) {
+            Notifier.cancelAllNotifs();
+            Notifier.expirNotifAtDate(new Date(Date.now() + 60 * 1000)); // in 1 minutes
+        }
         return (
             <View style = {{flexDirection : 'column'}}>
             <View style = {{paddingVertical : 10}}>
@@ -190,17 +201,6 @@ class FrijScreen extends React.Component {
           }
         })
         .then(arr => {
-            let aboutToExpire = false;
-            for (item of arr.data.inventory) {
-              console.log(item);
-                if (this._expireWithinTwoDays(new Date(item.expDate))) {
-                    aboutToExpire = true;
-                    break;
-                }
-            }
-            if (aboutToExpire) {
-                Notifier.expirNotifAtDate(Date.now() + 60 * 1000); // in 1 minutes
-            }
             this.setState({inventory: arr.data.inventory})
         })
         .catch(error => {
