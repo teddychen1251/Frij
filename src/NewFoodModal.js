@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   TextInputStyle: {
-    marginLeft : '33%', 
-    marginRight : '29%', 
+    marginLeft : '33%',
+    marginRight : '29%',
     height: 40,
     color: '#444'
   }
