@@ -73,7 +73,7 @@ class EditFoodModal extends React.Component {
   }
   handleAddItems() {
     AsyncStorage.getItem('@User_token').then(response => {
-      Axios.delete('http://localhost:5000/api/storage/items/' + this.props.navigation.getParam('id'), {
+      Axios.delete('https://frij-api.herokuapp.com/api/storage/items/' + this.props.navigation.getParam('id'), {
         headers : {
           'x-auth-token' : response
         }

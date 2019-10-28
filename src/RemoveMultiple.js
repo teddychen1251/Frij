@@ -108,11 +108,12 @@ class RemoveMultiple extends React.Component {
 
   handleRemoveMultiple() {
     AsyncStorage.getItem('@User_token').then(response => {
-      Axios.delete(`http://localhost:5000/api/storage/allitems`, {
+      Axios.delete(`https://frij-api.herokuapp.com/api/storage/allitems`, {
          name: this.state.name,
          expDate: this.state.expDate,
          price: this.state.price
-       }, {
+       },
+       {
          headers : {
            'x-auth-token' : response
          }

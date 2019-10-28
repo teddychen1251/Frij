@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   TextInputStyle: {
-    marginLeft : '37%', 
-    marginRight : '25%', 
+    marginLeft : '37%',
+    marginRight : '25%',
     height: 40,
     color: '#444'
   }
@@ -142,7 +142,7 @@ class RegisterScreen extends React.Component {
             .catch(error => {
               console.log(error);
               alert(error.response ? error.response.data.errors[0].msg : 'error occurred')
-            }); 
+            });
         } else {
             alert('Passwords do not match');
         }
